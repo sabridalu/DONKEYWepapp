@@ -1,0 +1,198 @@
+
+
+<div class="zoom-container">
+  <!-- <nav class="navbar" id="navbar">
+    <div class="logo">
+      <img src="/assets/logoD.png" alt="Logo Donkey">
+    </div>
+    
+    <div class="menu-icon" id="menu-icon" (click)="toggleMenu()">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about-us">About Us</a></li>
+      <li><a href="#newsletter">Newsletter</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#footer">Contact Us</a></li>
+    </ul>
+    
+    
+  </nav> -->
+
+  <section id="home" class="home"aria-label="Go to Home">
+    <div class="container">
+      <div class="content">
+        <h1> Combatti la povertà alimentare con Donkey </h1>
+        <p style="margin-top: 60px">Hai mai desiderato fare la differenza nella tua comunità?</p>
+        <p>Acquista generi alimentari dai negozi locali per donarli a chi ne ha più bisogno, con un semplice tap.</p>
+        <div class="store-buttons">
+          <img src="assets/apple.png" alt="App Store Badge" class="store-logo" (click)="goToAppStore()">
+          <img src="assets/google-play-logo.png" alt="Google Play Badge" class="store-logo" (click)="goToPlayStore()">
+        </div>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="image-container">
+        <img src="assets/catalogoTelefono.png" alt="Immagine del telefono">
+      </div>
+    </div>
+  </section>
+
+  <section id="about-us" class="about-us"aria-label="Descrizione ">
+
+        <div class="container">
+
+          <h1 class="main-message">
+          La nostra app ti permette di donare cibo sicuro, acquistando generi alimentari dai negozi locali.</h1>
+        
+        </div>
+          <h2 class="sub-message" style="  text-align: center;">
+            Siamo una giovane impresa innovativa con la missione di rendere semplice, comodo e veloce il processo di donazione di generi alimentari a chi ne ha più bisogno nella tua comunità.</h2>
+
+    </section>
+
+  <section id="how-work" class="how-work" aria-label="Come funziona?">
+    <div class="container">
+
+      <div class="text-container">
+        <div class="title">
+        
+        <h1> Come funziona?</h1>
+
+        </div>
+        <p><strong>Scegli</strong>:  Seleziona i prodotti che vuoi donare dai negozi nella tua città        </p>
+        <p><strong>Acquista</strong>: Effettua l’acquisto attraverso l’app utilizzando sistemi di pagamento tracciabili e sicuri       </p>
+        <p><strong>Dona</strong>:  Le associazioni di volontariato convenzionate distribuiranno la tua spesa solidale a chi ne ha bisogno       </p>
+        <p><strong>Risparmia</strong>: Guadagna punti per ottenere coupon e sconti per ogni donazione che effettui su DonKey      </p>
+        <p><strong>Impatto</strong>:  Monitora il tuo impatto sociale        </p>
+      </div>
+
+      <div class="gif-container">
+        <img src="assets/gif.png" alt="Immagine del telefono">
+
+      </div>
+      
+    </div>
+    <div class="container">
+      <video src="assets/video.mp4" controls style="border:2px solid #10A3E2; display: flex;justify-content: space-between;align-items: center;max-width: 1500px;margin: 0 auto;">
+          Your browser does not support the video tag.
+        </video>
+    </div>
+   
+  </section>
+
+
+  <section id="info-us" class="info-us"aria-label="Ulteriori info">
+
+    <div class="container">
+
+      <h1 class="main-message">
+        L’accesso a cibo fresco, nutriente e di qualità
+
+        è un diritto fondamentale, non un privilegio.<br>
+        
+        È questa convinzione che ci ha spinto a creare ​Donkey.</h1>
+        
+      </div>
+
+      <h2 class="sub-message">
+      
+        <p>Bastano pochi click, una piccola donazione, per illuminare la giornata di qualcuno. ​Insieme, possiamo tessere una rete solidale che abbraccia l’intera città, ​trasformando la tua generosità in azioni concrete.</p>
+        <p>Unisciti a noi in questa missione, perché ogni prodotto che doni non è solo cibo: ​è speranza, è dignità, è la prova tangibile che la comunità si stringe attorno a chi ne ha più bisogno e non lascia indietro nessuno.</p>
+        <p>E ricorda: anche il più piccolo gesto può innescare il cambiamento più grande.</p>
+      </h2>
+
+  </section>
+
+  <section id="why" class="why"aria-label="Perchè sceglierci">
+    <div class="container">
+      <div class="image-container">
+        <img src="/assets/why.png" alt="Immagine scambio pacchi" class="why-image">
+      </div>  
+      
+      <div class="content">
+        <h1> Perché scegliere DonKey?</h1>
+        <ul>
+          <li>Ti consente di generare un impatto sociale ​positivo e diretto sulla tua comunità</li>
+          <li>Dona con pochi click, senza sforzo ​aggiuntivo, scegliendo esattamente ciò che ​vuoi donare</li>
+          <li>Ottieni codici sconto da usare nei negozi in ​cui doni: le buone azioni ripagano sempre!</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="newsletter" class="newsletter" aria-label="Keep in touch">
+  <div class="container">
+    <div class="content">
+      <h1> Unisciti a noi</h1>
+      <p style="margin-top: 60px">
+        Se ti piace la nostra iniziativa, inserisci la tua email qui sotto ​per rimanere aggiornato sul lancio di DonKey nella tua città.
+      </p>
+      <div class="newsletter-form">
+        <form (submit)="checkMail(emailInput.value)"(input)="onInputChange()">
+          <input 
+            type="email" 
+            #emailInput 
+            placeholder="Scrivi la tua email" 
+            required 
+          />
+          <button type="submit" class="newsletter-button" [disabled]="!isEmailValid(emailInput.value)">Iscriviti</button>
+        </form>
+        <p *ngIf="!isEmailValid(emailInput.value) && emailTouched"  class="errorFormatMessage">
+          {{ errorFormatMessage }}
+      </p>
+        <!-- Messaggi di feedback -->
+        <p *ngIf="successMessage"class="success-message">
+          {{ successMessage }}
+        </p>
+        <p *ngIf="errorMessage"class="error-message">
+          {{ errorMessage }}
+        </p>
+      </div>
+      
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      
+      
+    </div>
+    <div class="image-container">
+      <img src="/assets/donare.png" alt="Immagine del telefono" class="phone-image">
+    </div>
+  </div>
+  </section>
+  <section id="faq" class="faq"aria-label="Domande frequenti">
+      <div class="container">
+      <h2 class="faq-title">FAQ</h2>
+
+      <div class="faq-item">
+        <h3 class="faq-question">1. Come posso essere sicuro che la mia donazione arrivi a chi ne ha bisogno?</h3>
+        <p class="faq-answer">Donkey collabora direttamente con associazioni di volontariato verificate e negozi locali affidabili. Ogni donazione viene tracciata dal momento dell'acquisto fino alla consegna. Puoi seguire il percorso della tua donazione attraverso l'app e ricevere notifiche sullo stato di consegna. Inoltre, pubblichiamo regolarmente report di trasparenza che mostrano l'impatto complessivo delle donazioni nella comunità.</p>
+      </div>
+      
+      <div class="faq-item">
+        <h3 class="faq-question">2. Che tipo di prodotti posso donare?</h3>
+        <p class="faq-answer">Puoi donare una vasta gamma di prodotti alimentari non deperibili e a lunga conservazione: pasta, riso, legumi in scatola, olio, zucchero, farina, prodotti per l'infanzia e molto altro. L'app ti mostrerà una lista di prodotti disponibili per la donazione presso i negozi partner, garantendo che siano sempre prodotti di cui c'è effettivamente bisogno.</p>
+      </div>
+      
+      <div class="faq-item">
+        <h3 class="faq-question">3. Ci sono costi aggiuntivi per l'utilizzo dell'app?</h3>
+        <p class="faq-answer">L'app Donkey è gratuita da scaricare e utilizzare. Per mantenere la piattaforma operativa e migliorare continuamente il nostro servizio, applichiamo una piccola commissione su ogni acquisto effettuato tramite l'app. Questa commissione è una percentuale minima dell'importo totale dell'acquisto e viene utilizzata per coprire i costi di gestione, sviluppo e manutenzione della piattaforma. Prima di finalizzare ogni acquisto, vedrai chiaramente l'importo esatto della commissione applicata. Il nostro obiettivo è mantenere questa commissione il più bassa possibile, garantendo al contempo la sostenibilità e l'efficienza del servizio.</p>
+      </div>
+      
+      <div class="faq-item" style="margin-bottom: 0;">
+        <h3 class="faq-question">4. Come faccio a sapere che la mia donazione fa davvero la differenza?</h3>
+        <p class="faq-answer">Donkey ti tiene costantemente aggiornato sull'impatto delle tue donazioni. Attraverso l'app, potrai vedere quante persone hai aiutato, quanti pasti sono stati distribuiti grazie al tuo contributo e ricevere storie e testimonianze (nel rispetto della privacy) da parte dei beneficiari. Inoltre, organizziamo regolarmente eventi comunitari dove puoi incontrare le associazioni partner e vedere di persona l'impatto del tuo supporto.</p>
+      </div>
+    </div>
+  </section>
+
+</div>

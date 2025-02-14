@@ -1,0 +1,894 @@
+
+/*forzare la codifica corretta*/
+@charset "UTF-8";
+/* Definizione dei font */
+@font-face {
+  font-family: 'Helvetica World';
+  src: url('/fonts/HelveticaWorld-Regular.woff2') format('woff2'),
+       url('/fonts/HelveticaWorld-Regular.woff') format('woff'),
+       url('/fonts/HelveticaWorld-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Helvetica World';
+  src: url('/fonts/HelveticaWorld-Bold.woff2') format('woff2'),
+       url('/fonts/HelveticaWorld-Bold.woff') format('woff'),
+       url('/fonts/HelveticaWorld-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TTCommons';
+  src: url('/fonts/TTCommons-Regular.woff2') format('woff2'),
+       url('/fonts/TTCommons-Regular.woff') format('woff'),
+       url('/fonts/TTCommons-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+0027, U+0034; /* Solo per il carattere ' e 4 */
+}
+@font-face {
+  font-family: 'TTCommons Pro';
+  src:  url('/fonts/Fontspring-DEMO-tt_commons_pro_expanded_regular.woff') format('woff'),
+  url('/fonts/Fontspring-DEMO-tt_commons_pro_expanded_regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+0027, U+0034; /* Solo per il carattere ' e 4 */
+}
+@font-face {
+  font-family: 'TTCommons Pro';
+  src:url('/fonts/Fontspring-DEMO-tt_commons_pro_expanded_bold.woff') format('woff'),
+  url('/fonts/Fontspring-DEMO-tt_commons_pro_expanded_bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  unicode-range: U+0027, U+0034; /* Solo per il carattere ' e 4 */
+}
+@font-face {
+  font-family: 'TTCommons Pro Expanded';
+  src: url('/fonts/Fontspring-DEMO-tt_commons_pro_expanded_extralight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TTCommons Pro Expanded';
+  src: url('/fonts/Fontspring-DEMO-tt_commons_pro_expanded_light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TTCommons Pro Expanded';
+  src: url('/fonts/Fontspring-DEMO-tt_commons_pro_expanded_light_italic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'TTCommons Pro Expanded';
+  src: url('/fonts/Fontspring-DEMO-tt_commons_pro_expanded_thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TTCommons Pro Expanded';
+  src: url('/fonts/Fontspring-DEMO-tt_commons_pro_expanded_thin_italic.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'TTCommons Pro Expanded';
+  src: url('/fonts/Fontspring-DEMO-tt_commons_pro_expanded_regular.woff') format('woff'),
+       url('/fonts/Fontspring-DEMO-tt_commons_pro_expanded_regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  unicode-range: U+0027, U+0034; /* Solo per il carattere ' e 4 */
+}
+@font-face {
+  font-family: 'TTCommons Pro Expanded';
+  src: url('/fonts/Fontspring-DEMO-tt_commons_pro_expanded_bold.woff') format('woff'),
+       url('/fonts/Fontspring-DEMO-tt_commons_pro_expanded_bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  unicode-range: U+0027, U+0034; /* Solo per il carattere ' e 4 */
+}
+
+
+/* Variabili di colore */
+$primary-color: #10A3E2;
+$secondary-color: #000000;
+$background-color: #FFFFFF;
+@media (min-width: 1024px) {
+  body {
+    transform: scale(0.3);
+    transform-origin: 0 0;
+    width: 200%;
+    zoom: 0.3; /* Scala l'intera pagina al 50% */
+  }
+}
+.zoom-container {
+  transform: scale(0.5); /* Riduce la scala al 50% */
+  transform-origin: top left; /* Imposta l'origine della scala */
+  width: 200%; /* Compensa la riduzione della larghezza */
+  height: 200%; /* Compensa la riduzione dell'altezza */
+//   overflow: hidden; /* Nasconde gli eventuali overflow */
+}
+
+  
+/* Stili di base */
+body {
+    font-family: 'Helvetica World', 'TTCommons Pro Expanded', sans-serif;
+    background-color: $background-color;
+    color: $secondary-color;
+  }
+
+/* Stile base della navbar */
+// .navbar {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//     position: sticky;
+//     top: 0;
+//     width: 100%;
+//     z-index: 1000;
+//     background-color: #333; /* Sfondo scuro per contrasto */
+//     color: white;
+//     padding: 10px 20px;
+//   height: 60px;
+//   padding-bottom: 60px; /* Spazio per evitare che la barra si sovrapponga */
+
+//   .logo img {
+//     width: 120px;
+//   }
+//   .nav-links {
+//     display: flex;
+//     list-style: none;
+//     li {
+//       margin-left: 20px;
+//       margin-right: 40px;
+//       a {
+//         font-size: 1.6rem;
+//         color: rgb(255, 255, 255);
+//         text-decoration: none;
+//         font-weight: 600;
+//         font-family: 'Helvetica World', sans-serif;
+//         font-weight: bold;
+//         transition: color 0.3s ease;
+//         &:hover {
+//           color: $primary-color;
+//         }
+//       }
+//     }
+//   }
+//   .menu-icon {
+//     display: none;
+//     flex-direction: column;
+//     cursor: pointer;
+//     width: 30px;
+//     height: 25px;
+//     justify-content: space-between;
+//     div {
+//       width: 100%;
+//       height: 3px;
+//       background-color: white;
+//       transition: all 0.4s ease;
+//     }
+//     &.active .bar1 {
+//       transform: rotate(-45deg) translate(-5px, 6px);
+//     }
+//     &.active .bar2 {
+//       opacity: 0;
+//     }
+//     &.active .bar3 {
+//       transform: rotate(45deg) translate(-5px, -6px);
+//     }
+//   }
+// }
+section {
+    padding-top: 80px; /* Spazio per evitare che la barra si sovrapponga */
+  }
+  
+
+  /* Container principale */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  max-width: 1500px;
+  margin: 0 auto;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+}
+/* Sezione contenuto */
+.content {
+  flex: 2;
+  width: 100%;
+  height: auto;
+  h1 {
+    font-size: 4.2rem;
+    color: $secondary-color;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    line-height: 1.2;
+    font-weight: bold;
+    font-family: 'Helvetica World', sans-serif;
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+      margin-top: 20px;
+    }
+  }
+  p {
+    font-size: 1.7rem;
+    line-height: 1.2;
+    margin: 20px 0;
+    font-family: 'TTCommons Pro expanded', sans-serif;
+    @media (max-width: 768px) {
+      font-size: 1.4rem;
+      margin-top: 10px;
+    }
+  }
+  .store-buttons {
+    margin-top: 90px;
+    display: flex;
+    img {
+      margin-right: 40px;
+      width: 280px;
+      transition: width 0.3s ease;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+      img {
+        margin: 10px 0;
+        width: 200px;
+      }
+    }
+  }
+  .social-icons {
+    margin-top: 90px;
+    display: flex;
+    a {
+      margin-right: 40px;
+      font-size: 1.9rem;
+      color: $secondary-color;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      &:hover {
+        color: $primary-color;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    @media (max-width: 768px) {
+      justify-content: center;
+      margin-top: 40px;
+      a {
+        margin: 0 10px;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+/* Sezione immagine */
+.image-container {
+  flex: 0.8;
+  text-align: center;
+  margin-top: 40px;
+  width: 100%;
+  img {
+    max-width: 90%;
+    height: auto;
+    transition: max-width 0.3s ease;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 20px;
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+
+/* Sezione About Us */
+.about-us {
+  width: 100%;
+  margin-top: 70px;
+  
+    text-align: center;
+  .main-message {
+    font-family: 'TTCommons Pro expanded', sans-serif;
+    font-weight: 700;
+    color: #38b6ff;
+    font-size: 3.4rem;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    line-height: 1.2;
+    @media (max-width: 768px) {
+      font-size: 2.2rem;
+      margin-top: 20px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  .sub-message {
+    width: 67%;
+    font-family: 'TTCommons Pro expanded', sans-serif;
+    font-weight: 400; 
+    font-size: 2.1rem;
+    line-height: 1.3;
+    letter-spacing: 0.05rem;
+    margin-left: 25rem;
+    margin-right: 1.5rem;
+    text-align: center;
+    @media (max-width: 768px) {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.5rem;
+      letter-spacing: 0.02rem;
+    }
+  }
+}
+/*Sezione How-Work*/
+.how-work{
+  
+  width: 100%;
+  margin-top: 70px;
+  .text-container {
+    text-align: left;
+    width: 55%;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    line-height: 1.2;
+    
+  }
+  h1{
+      font-family: 'TTCommons Pro expanded', sans-serif;
+      font-weight: bold;
+      color: $secondary-color;
+      font-size: 3.4rem;
+      margin-bottom:70px ;
+    }
+    p{
+   
+      margin-top: 20px;
+      font-family: 'TTCommons Pro expanded', sans-serif;
+      font-size: 1.8rem;
+      line-height: 1.6;
+    }
+}
+.gif-container {
+  flex: 0.8;
+  text-align: center;
+  margin-top: 40px;
+  width: 100%;
+  img {
+    max-width: 90%;
+    height: auto;
+    transition: max-width 0.3s ease;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 20px;
+    img {
+      max-width: 100%;
+    }
+  }
+}
+/* Sezione info Us */
+.info-us {
+  width: 100%;
+  margin-top: 70px;
+  .main-message {
+    text-align: center;
+    font-family: 'TTCommons Pro expanded', sans-serif;
+    font-weight: 700;
+    color: $primary-color;
+    font-size: 3.4rem;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    line-height: 1.2;
+    @media (max-width: 768px) {
+      font-size: 2.2rem;
+      margin-top: 20px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  .sub-message {
+    width: 67%;
+    font-family: 'TTCommons Pro expanded', sans-serif;
+    font-weight: 400;
+    font-size: 2.1rem;
+    line-height: 1.3;
+    letter-spacing: 0.05rem;
+    margin-left: 26rem;
+    margin-right: 1.5rem;
+    text-align: center;
+    p{
+      margin-bottom: 50px;
+    }
+    @media (max-width: 768px) {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.5rem;
+      letter-spacing: 0.02rem;
+    }
+    
+  }
+}
+.why {
+  /* Container principale */
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    max-width: 1500px;
+    margin: 0 auto;
+    background-color: $background-color;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+  }
+  /* Sezione immagine */
+  .image-container {
+    flex: 1;  // Aumentare la flessibilità dell'immagine per occupare più spazio
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    img {
+      max-width: 100%;  // L'immagine occuperà tutta la larghezza del contenitore
+      height: auto;
+      transition: max-width 0.3s ease;
+      margin-top: 80px;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-top: 20px;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+  /* Sezione contenuto */
+  .content {
+    flex: 1;  // Bilanciare la flessibilità con l'immagine
+    width: 100%;
+    height: auto;
+    margin-left: 40px;
+    h1 {
+      font-size: 3.2rem;
+      color: $primary-color;
+      margin-bottom: 20px;
+      margin-top: 50px;
+      line-height: 1.2;
+      font-weight: bold;
+      font-family: 'TTCommons Pro expanded', sans-serif;
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+        margin-top: 20px;
+      }
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-top: 60px;
+      li {
+        font-size: 2rem;
+        line-height: 1.5;
+        margin-bottom: 50px;
+        font-family: 'TTCommons Pro expanded', sans-serif;
+        font-weight: 400;
+        color: $secondary-color;
+        text-align: left;
+        @media (max-width: 768px) {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
+/* Sezione newsletter */
+.newsletter {
+  padding: 60px 0;
+  background-color: $background-color;
+  /* Container principale */
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    max-width: 1500px;
+    margin: 0 auto;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+  }
+  /* Sezione contenuto */
+  .content {
+    flex: 2;
+    width: 100%;
+    height: auto;
+    h1 {
+      font-size: 4.2rem;
+      color: $secondary-color;
+      margin-bottom: 20px;
+      margin-top: 50px;
+      line-height: 1.2;
+      font-weight: bold;
+      font-family: 'TTCommons Pro expanded', sans-serif;
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+        margin-top: 20px;
+      }
+    }
+    p {
+      font-size: 2rem;
+      line-height: 1.2;
+      margin: 20px 0;
+      font-family: 'TTCommons Pro expanded', sans-serif;
+      font-weight: 400;
+      font-size: 2.1rem;
+      line-height: 1.3;
+      letter-spacing: 0.05rem;
+      @media (max-width: 768px) {
+        font-size: 1.4rem;
+        margin-top: 10px;
+      }
+    }
+    form {
+      display: flex;
+      margin-top: 130px;
+      input[type="email"] {
+        padding: 12px 20px;
+        border-radius: 25px;
+        border: 1px solid #ccc;
+        font-size: 1.6rem;
+        font-family: 'TTCommons Pro expanded', sans-serif;
+        width: 500px;
+        margin-right: 10px;
+        outline: none;
+        @media (max-width: 768px) {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+      .newsletter-button {
+        padding: 12px 20px;
+        background-color: $primary-color;
+        color: white;
+        font-size: 1.6rem;
+        font-family: 'TTCommons Pro expanded', sans-serif;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+      }
+     
+    }
+    .error-message {
+      color:$primary-color;
+      margin-top: 15px;
+      font-size: 1.2rem;
+      font-family: 'TTCommons Pro expanded', sans-serif;
+    }
+  
+    .success-message {
+      color:$primary-color;
+      margin-top: 15px;
+      font-size: 1.2rem;
+      font-family: 'TTCommons Pro expanded', sans-serif;
+    }
+    .errorFormatMessage{
+      color:$primary-color;
+      margin-top: 15px;
+      font-size: 1.2rem;
+      font-family: 'TTCommons Pro expanded', sans-serif;
+    }
+    .social-icons {
+      margin-top: 150px;
+      display: flex;
+      a {
+        font-size: 2.4rem;
+        color: $secondary-color;
+        margin-right: 30px;
+        transition: color 0.3s ease;
+        &:hover {
+          color: $primary-color;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      @media (max-width: 768px) {
+        justify-content: center;
+        margin-top: 20px;
+        a {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+  /* Sezione immagine */
+  .image-container {
+    flex: 0.8;
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+    img {
+      width: 1000px; /* Aumenta la larghezza massima al 100% */
+      height: 100%;
+      transition: max-width 0.3s ease;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-top: 20px;
+      img {
+        max-width: 50%; /* Mantieni il 100% per dispositivi mobili */
+      }
+    }
+  }
+}
+/* Sezione FAQ */
+.faq {
+  padding: 60px 0;
+  background-color: $background-color;
+  margin-bottom: 0; /* Spinge il footer in fondo alla pagina */
+  clear: both; /* Ensure the section is cleared properly */
+  padding-bottom: 0; // Rimuove il padding inferiore
+
+  .container {
+    max-width: 1500px;
+    max-height: min-content;
+    margin: 0 auto;
+    padding: 0 40px; /* Mantiene il margine come le altre sezioni */
+    display: flex;
+    flex-direction: column; /* Forza la disposizione verticale */
+    text-align: left;
+    @media (max-width: 768px) {
+      padding: 0 20px; /* Riduce il padding su dispositivi mobili */
+    }
+    .faq-title {
+      font-size: 4.2rem;
+      color: $primary-color;
+      font-weight: 700;
+      font-family: 'TTCommons Pro expanded', sans-serif;
+      margin-bottom: 70px;
+      letter-spacing: 1rem;
+      line-height: 2.3;
+      text-align: left;
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+      }
+    }
+    /* Impostazione verticale per gli item */
+    .faq-item {
+      margin-bottom: 40px;
+      text-align: left;
+      display: block; /* Garantisce che gli elementi non siano allineati orizzontalmente */
+      padding: 0 20px; /* Aggiungi padding per mantenere il testo dentro il contenitore */
+      .faq-question {
+        font-size: 2.2rem;
+        font-weight: 600;
+        color: $secondary-color;
+        margin-bottom: 15px;
+        font-family: 'Helvetica World', sans-serif;
+  
+        @media (max-width: 768px) {
+          font-size: 1.8rem;
+        }
+      }
+      .faq-answer {
+        font-size: 1.7rem;
+        font-weight: 400;
+        line-height: 1.6;
+        color: $secondary-color;
+        font-family: 'Helvetica World', sans-serif;
+        margin-bottom: 20px;
+        @media (max-width: 768px) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+/* Media Queries per dispositivi mobili */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    .logo img {
+      width: 100px;
+    }
+    .menu-icon {
+      display: flex;
+    }
+    .nav-links {
+      margin-top: 60px;
+    //   display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      border-top: 1px solid #ccc;
+      max-height: 0;
+    //   overflow: hidden;
+      transition: max-height 0.5s ease-in-out;
+      li {
+        margin: 15px 0;
+        text-align: center;
+        a {
+          font-size: 1.6rem;
+          color: $background-color;
+          padding: 10px 0;
+          display: block;
+          transition: background-color 0.3s ease, color 0.3s ease;
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+    /* Quando il menu è attivo */
+    .nav-links.active {
+      display: flex;
+      max-height: 500px; // Un valore sufficiente per mostrare tutti i link
+    }
+  }
+  /* Sezione Home */
+  .home {
+    padding: 20px;
+    .container {
+      flex-direction: column;
+      padding: 20px;
+    }
+    .content {
+      width: 100%;
+      height: auto;
+      h1 {
+        font-size: 2.5rem;
+        margin-top: 20px;
+      }
+      p {
+        font-size: 1.4rem;
+        margin-top: 10px;
+      }
+      .store-buttons {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+          margin: 10px 0;
+          width: 200px;
+        }
+      }
+      .social-icons {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        a {
+          margin: 0 10px;
+          font-size: 1.5rem;
+        }
+      }
+    }
+    .image-container {
+      width: 100%;
+      margin-top: 20px;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+ 
+  /* Sezione FAQ */
+  .faq {
+      margin-bottom: 0; /* Spinge il footer in fondo alla pagina */
+    .container {
+      padding: 0 20px; /* Riduce il padding su dispositivi mobili */
+    }
+  }
+  /* Sezione How Work */
+  .how-work {
+    .text-container {
+      width: 90%;
+      margin: 20px auto;
+      text-align: left;
+      .title {
+        h1 {
+          font-size: 2.2rem;
+        }
+      }
+      p {
+        font-size: 1.4rem;
+      }
+    }
+    .gif-container {
+      width: 100%;
+      margin-top: 20px;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+  /* Sezione info Us */
+  .info-us {
+    .main-message {
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 2.2rem; /* Ridimensiona per dispositivi mobili */
+    }
+    .sub-message {
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.5rem;
+      letter-spacing: 0.02rem;
+      p {
+        margin-bottom: 15px; // Spazio tra paragrafi su mobile
+      }
+    }
+  }
+}
+/* Animazione per l'icona del menu quando attivo */
+.menu-icon.active .bar1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.menu-icon.active .bar2 {
+  opacity: 0;
+}
+.menu-icon.active .bar3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  .back-to-top i {
+    font-size: 24px;
+  }
+  
+// .navbar {
+//     position: fixed;
+//     top: 0;
+//     width: 100%;
+//     z-index: 1000;
+//     background-color: white; /* Aggiungi il colore di sfondo */
+//   }
+  
