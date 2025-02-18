@@ -43,41 +43,41 @@ export class AppComponent {
     return emailPattern.test(email);
   }
   // Metodo per controllare se l'email è già registrata
-  checkMail(email: string) {
-    if (email) {
-      this.newsletterService.checkEmail(email).subscribe(
-        (exists) => {
-          if (exists) {
-            this.errorMessage = 'Questa email è già stata registrata, prova con un account diverso';
-            this.successMessage = null; // Cancella eventuali messaggi di successo
-          } else {
-            this.errorMessage = null; // Cancella eventuali messaggi di errore
-            this.addMail(email);
-          }
-        },
-        (error) => {
-          console.error('Errore nel controllo dell\'email:', error);
-          this.errorMessage = 'Si è verificato un errore durante la verifica dell\'email';
-          this.successMessage = null;
-        }
-      );
-    }
-  }
+  // checkMail(email: string) {
+  //   if (email) {
+  //     this.newsletterService.checkEmail(email).subscribe(
+  //       (exists) => {
+  //         if (exists) {
+  //           this.errorMessage = 'Questa email è già stata registrata, prova con un account diverso';
+  //           this.successMessage = null; // Cancella eventuali messaggi di successo
+  //         } else {
+  //           this.errorMessage = null; // Cancella eventuali messaggi di errore
+  //           this.addMail(email);
+  //         }
+  //       },
+  //       (error) => {
+  //         console.error('Errore nel controllo dell\'email:', error);
+  //         this.errorMessage = 'Si è verificato un errore durante la verifica dell\'email';
+  //         this.successMessage = null;
+  //       }
+  //     );
+  //   }
+  // }
 
   // Metodo per aggiungere l'email se non è già presente
-  addMail(email: string) {
-    this.newsletterService.addEmail(email).subscribe(
-      () => {
-        this.successMessage = 'Email aggiunta con successo';
-        this.errorMessage = null; // Cancella eventuali messaggi di errore
-      },
-      (error) => {
-        console.error('Errore durante l\'aggiunta dell\'email:', error);
-        this.errorMessage = 'Si è verificato un errore durante l\'aggiunta dell\'email';
-        this.successMessage = null;
-      }
-    );
-  }
+  // addMail(email: string) {
+  //   this.newsletterService.addEmail(email).subscribe(
+  //     () => {
+  //       this.successMessage = 'Email aggiunta con successo';
+  //       this.errorMessage = null; // Cancella eventuali messaggi di errore
+  //     },
+  //     (error) => {
+  //       console.error('Errore durante l\'aggiunta dell\'email:', error);
+  //       this.errorMessage = 'Si è verificato un errore durante l\'aggiunta dell\'email';
+  //       this.successMessage = null;
+  //     }
+  //   );
+  // }
 
     // Funzione chiamata quando l'input viene modificato
     onInputChange() {
